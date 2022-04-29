@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        const token = window.localStorage.getItem('token')
+        if(!token) window.location = '/login.html'
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +29,7 @@
         <main class="main">
             <div class="wrapper">
                 <h1 class="title">Upload a video</h1>
-                 <span id="errorMessage" style="margin-bottom: 15px; height: 19px; color: red">Bu fake error xabar</span>
+                 <span id="errorMessage" style="margin-bottom: 15px; height: 19px; color: red"></span>
                 <form id="videoForm" action="#" class="site-form">
                     <label>
                         <input type="text" id="videoInput" placeholder="video title" required>

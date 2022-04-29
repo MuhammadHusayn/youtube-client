@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        const token = window.localStorage.getItem('token')
+        if(token) window.location = '/admin.html'
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +20,7 @@
         <div class="wrapper">
             <h1 class="title">Registration Page</h1>
             <form id="registerForm" action="#" class="site-form">
-                <span id="errorMessage" style="margin-bottom: 15px; height: 19px; color: red;">bu fake error xabar</span>
+                <span id="errorMessage" style="margin-bottom: 15px; height: 19px; color: red;"></span>
                 <label>
                     <span class="zmdi zmdi-account"></span>
                     <input type="text" id="usernameInput" placeholder="Your name" required>
@@ -35,11 +39,13 @@
             </form>
             <div style="margin-top: 20px">
                <a style="margin-right: 25px;" href="/" class="sign-link">home</a>
-               <a href="/login" class="sign-link">I am already member</a>
+               <a href="./login.html" class="sign-link">I am already member</a>
            </div>
             <img src="img/signup-image.jpg" alt="signup-image" class="signup-image">
         </div>
     </div>
 
+<script src="./js/utils.js"></script>
+<script src="./js/register.js"></script>
 </body>
 </html>
