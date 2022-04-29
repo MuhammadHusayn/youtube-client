@@ -43,7 +43,7 @@ async function renderVideos(videos, truncate) {
                     <h2 data-id="${video.videoId}" class="channel-name">${video.title}</h2>
                     <h3 class="iframe-title">${video.user.username}</h3>
                     <time class="uploaded-time">${readyDate}</time>
-                    <a class="download" href="#">
+                    <a class="download" href="${API + '/videos/download?file=' + video.link}">
                         <span>${(video.size / 1024 / 1024).toFixed(1)} MB</span>
                         <img src="./img/download.png">
                     </a>
@@ -81,7 +81,7 @@ async function getVideos() {
 
 async function compareUsers(oldUsers, newUsers) {
     if (oldUsers.length < newUsers.length) {
-        CACHED_USERS = users
+        CACHED_USERS = newUsers
         return renderUsers(newUsers.slice(oldUsers.length), false)
     }
 }

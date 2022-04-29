@@ -1,4 +1,4 @@
-const API = 'http://192.168.3.87:5000'
+const API = 'https://yotube-clone-back.herokuapp.com'
 
 async function request(path, method = 'GET', body, option) {
     let response
